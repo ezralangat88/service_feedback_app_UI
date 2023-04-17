@@ -1,8 +1,18 @@
-import React from 'react'
+import FeetbackItem from "./FeetbackItem"
+import FeedbackData from "../../Resources/FeedbacData"
+import FeedbackList from "./FeedbackList"
+import { useState } from "react"
+
+
 
 const Home = () => {
+
+    const [feedback, setFeedback] = useState(FeedbackData)
+
   return (
-    <div>Home</div>
+    <>
+    <FeedbackList feedback={feedback}/>
+    </>
   )
 }
 
