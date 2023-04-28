@@ -2,7 +2,7 @@ import FeetbackItem from "./FeetbackItem"
 import FeedbackData from "../../Resources/FeedbacData"
 import FeedbackList from "./FeedbackList"
 import { useEffect, useState } from "react"
-
+import FeedbacStats from "./FeedbacStats"
 
 
 const Home = () => {
@@ -20,6 +20,7 @@ const Home = () => {
 
   return (
     <>
+    <FeedbacStats feedback={feedback}/>
     <FeedbackList 
     feedback={feedback}
     handleDelete={deleteFeedback}
