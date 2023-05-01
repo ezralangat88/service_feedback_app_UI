@@ -168,7 +168,7 @@ input:focus {
   opacity: 0.9;
 }
 
-.btn:disabled {
+.btn:disabled { 
   background-color: #cccccc;
   color: #333;
   cursor: auto;

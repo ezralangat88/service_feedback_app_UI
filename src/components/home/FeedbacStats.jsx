@@ -8,6 +8,7 @@ const FeedbacStats = ({ feedback }) => {
         return acc + cur.rating
     }, 0) / feedback.length
 
+    //Setting to one decimal place and removing trailing 0s
     average = average.toFixed(1).replace(/[.,]0$/, '')
 
     

@@ -3,6 +3,7 @@ import FeedbackData from "../../Resources/FeedbacData"
 import FeedbackList from "./FeedbackList"
 import { useEffect, useState } from "react"
 import FeedbacStats from "./FeedbacStats"
+import FeedbackForm from "./FeedbackForm"
 
 
 const Home = () => {
@@ -20,6 +21,7 @@ const Home = () => {
 
   return (
     <>
+    <FeedbackForm/>
     <FeedbacStats feedback={feedback}/>
     <FeedbackList 
     feedback={feedback}
