@@ -1,17 +1,20 @@
 import PropTypes from 'prop-types' //impt
+import { Link, NavLink } from 'react-router-dom'
 
 const Header = ({text, bgColor, textColor}) => {
 
     const headerStyles = {
-        backgroundColor: bgColor,
+        backgroundColor: '',
         color: textColor,
     }
 
   return (
     <header>
         <div style={headerStyles}>
-          <h2>{text}</h2>
+         <NavLink to='/' activeClassName='active'> <h2>{text}</h2></NavLink>
         </div>
+        <NavLink to='/about' activeClassName='active' > <h2>About</h2></NavLink>
+        
     </header>
   )
 }
@@ -19,7 +22,7 @@ const Header = ({text, bgColor, textColor}) => {
 Header.defaultProps = {
     text: 'Feedback Dashboard',
     bgColor: 'rgba(0,0,0,0.4)',
-    textColor: '#ff6a95',
+    textColor: 'red',
 }
 
 Header.propTypes = {

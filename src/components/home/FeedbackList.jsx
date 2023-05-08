@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import FeetbackItem from "./FeetbackItem"
 import PropTypes from 'prop-types'
+import {AnimatePresence, motion} from 'framer-motion'
 
 
 const FeedbackList = ({ feedback, handleDelete }) => {
@@ -12,18 +13,42 @@ const FeedbackList = ({ feedback, handleDelete }) => {
 
   return (
     <div className="container">
+        <AnimatePresence>
         {
             feedback.map((item)=>(
+                <motion.div
+                    key={item.id}
+                    initial = {{opacity: 0}}
+                    animate = {{opacity: 1}}
+                    exit = {{opacity: 0}}
+                >
                 <FeetbackItem 
                 key={item.id} 
                 item={item}
                 handleDelete={handleDelete}
                 />
+                </motion.div>
             ))
         }
+        </AnimatePresence>
     </div>
   )
 }
+
+// return (
+//     <div className="container">
+//         {
+//             feedback.map((item)=>(
+//                 <FeetbackItem 
+//                 key={item.id} 
+//                 item={item}
+//                 handleDelete={handleDelete}
+//                 />
+//             ))
+//         }
+//     </div>
+//   )
+// }
 
 FeedbackList.propTypes = {
     feedback: PropTypes.arrayOf(
