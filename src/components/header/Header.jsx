@@ -6,6 +6,7 @@ const Header = ({text, bgColor, textColor}) => {
     const headerStyles = {
         backgroundColor: '',
         color: textColor,
+        marginLeft: '2rem',
     }
 
   return (
@@ -13,7 +14,7 @@ const Header = ({text, bgColor, textColor}) => {
         <div style={headerStyles}>
          <NavLink to='/' activeClassName='active'> <h2>{text}</h2></NavLink>
         </div>
-        <NavLink to='/about' activeClassName='active' > <h2>About</h2></NavLink>
+        <NavLink style={{marginRight: '2rem'}} to='/about' activeClassName='active' > <h2>About</h2></NavLink>
         
     </header>
   )

@@ -5,12 +5,14 @@ import Footer from './components/footer/Footer';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import InvalidLink from './components/common/InvalidLink';
 import About from './components/common/About';
+import { FeedBackProvider } from './components/context/FeedBackContext';
 
 function App() {
 
 
   return (
     <>
+    <FeedBackProvider>
     <Router>
     <Header/>
 
@@ -27,6 +29,7 @@ function App() {
         <Route path='/*' element={<InvalidLink/>}/>
       </Routes>
     </Router>
+    </FeedBackProvider>
     </>
     
   );
