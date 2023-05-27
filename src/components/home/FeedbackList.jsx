@@ -2,18 +2,19 @@ import { useEffect } from "react"
 import FeetbackItem from "./FeetbackItem"
 import {AnimatePresence, motion} from 'framer-motion'
 import useFeedBackContext from "../context/useFeedBackContext"
+import Spinner from "../common/Spinner"
 
 
 const FeedbackList = () => {
 
-    const {feedback, deleteFeedback} = useFeedBackContext();
+    const {feedback, deleteFeedback, isLoading} = useFeedBackContext();
 
-    if (!feedback || feedback.length === 0) {
+    if (!isLoading && (!feedback || feedback.length === 0)) {
         return <p>No feedback yet</p>
     }
 
 
-  return (
+  return isLoading? (<Spinner/>) : (
     <div className="container">
         <AnimatePresence>
         {
